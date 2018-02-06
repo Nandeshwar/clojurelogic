@@ -12,10 +12,14 @@
   ;; Begin: check if number is even or odd
   (println "Enter a number")
   (let [num (read-line)]
+
+    ;; library function - even? odd?
+    ;; (if (= (even? (Integer/parseInt num))
+
     (if (= (evenOdd/isEven (Integer/parseInt num))
            true)
       (println "Even")
       (println "Odd")))
   ;; End: check if number is even or odd
-  
+
   )

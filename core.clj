@@ -2,6 +2,7 @@
   (:require [clojurelogic.welcome1      :as w])
   (:require [clojurelogic.EvenOdd       :as evenOdd])
   (:require [clojurelogic.EvenOddBetween :as evenOddBetween])
+  (:require [clojurelogic.reverseNumber :as reverseNumber])
   (:gen-class))
 
 (defn -main
@@ -9,6 +10,8 @@
   [& args]
   (println "Hello, World!")
     (w/welcome)
+    (println (reverseNumber/reverseNum 123))
+
 
   ;; Begin: check if number is even or odd
   (println "Enter a number to check if it is even or not")

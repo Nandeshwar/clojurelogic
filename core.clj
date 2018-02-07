@@ -3,6 +3,7 @@
   (:require [clojurelogic.EvenOdd       :as evenOdd])
   (:require [clojurelogic.EvenOddBetween :as evenOddBetween])
   (:require [clojurelogic.reverseNumber :as reverseNumber])
+  (:require [clojurelogic.fibonacci :as fibonacci])
   (:gen-class))
 
 (defn -main
@@ -10,8 +11,6 @@
   [& args]
   (println "Hello, World!")
     (w/welcome)
-    (println (reverseNumber/reverseNum 123))
-
 
   ;; Begin: check if number is even or odd
   (println "Enter a number to check if it is even or not")
@@ -26,10 +25,14 @@
       (println "Odd")))
   ;; End: check if number is even or odd
 
-  ;; Find the even and odd numbers between given range
+  ;; Begin: Find the even and odd numbers between given range
   (println "Enter two begin and end numbers to find the odd and even numbers between both")
   (let [begin (Integer/parseInt (read-line))
         end (Integer/parseInt (read-line))]
     (println (evenOddBetween/evenOddList begin end)))
+  ;; End: Find the even and odd numbers between given range
+
+  (println "Fibbonacci series: " (fibonacci/fib 5))
+  (println "Reverse of 123: " (reverseNumber/reverseNum 123))
 
   )

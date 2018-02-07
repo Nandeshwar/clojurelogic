@@ -1,5 +1,5 @@
 (ns clojurelogic.reverseNumber
-  (gen-class))
+  (:gen-class))
 
 (defn reverseNum
   ([num]

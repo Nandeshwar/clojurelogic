@@ -9,11 +9,10 @@
     (let [f3 (+ f1 f2)]
       (if (<= num 1)
         [f3]
-        (do
-          (if (= counter num)
-            fib-series
-            (recur num
-                   (inc counter)
-                   (conj fib-series f3)
-                   f2
-                   f3)))))))
+        (if (= counter num)
+          fib-series
+          (recur num
+                 (inc counter)
+                 (conj fib-series f3)
+                 f2
+                 f3))))))

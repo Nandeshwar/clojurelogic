@@ -4,6 +4,7 @@
   (:require [clojurelogic.EvenOddBetween :as evenOddBetween])
   (:require [clojurelogic.reverseNumber :as reverseNumber])
   (:require [clojurelogic.fibonacci :as fibonacci])
+  (:require [clojurelogic.prime-number :as prime])
   (:gen-class))
 
 (defn -main
@@ -34,5 +35,11 @@
 
   (println "Fibbonacci series: " (fibonacci/fib 5))
   (println "Reverse of 123: " (reverseNumber/reverseNum 123))
+  (println "is 11 prime number: " (prime/is-prime 11))
+  (println "is 9 prime number: " (prime/is-prime 9))
+
+  ;; The given below number is big prime number. It takes long time to check if it is prime. I waited 20 min and now giving up
+  ;;(println "is 20988936657440586486151264256610222593863921 prime number: " (prime/is-prime 20988936657440586486151264256610222593863921))
+
 
   )

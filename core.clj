@@ -7,6 +7,7 @@
   (:require [clojurelogic.prime-number :as prime])
   (:require [clojurelogic.age-group :as age-group])
   (:require [clojurelogic.smallest :as smallest])
+  (:require [clojurelogic.sorting :as sorting])
   (:gen-class))
 
 (defn -main
@@ -45,6 +46,7 @@
   ;;(println "is 20988936657440586486151264256610222593863921 prime number: " (prime/is-prime 20988936657440586486151264256610222593863921))
 
   (println "Smallest numbers among 5 4 7 2 3 = " (smallest/find-smallest[5 4 7 2 3]))
+  (println "Sorting numbers 5 4 7 2 2 3 = " (sorting/sortFun [5 4 7 2 2 3]))
 
 
   )

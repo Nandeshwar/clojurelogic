@@ -5,6 +5,7 @@
   (:require [clojurelogic.reverseNumber :as reverseNumber])
   (:require [clojurelogic.fibonacci :as fibonacci])
   (:require [clojurelogic.prime-number :as prime])
+  (:require [clojurelogic.age-group :as age-group])
   (:gen-class))
 
 (defn -main
@@ -37,6 +38,7 @@
   (println "Reverse of 123: " (reverseNumber/reverseNum 123))
   (println "is 11 prime number: " (prime/is-prime 11))
   (println "is 9 prime number: " (prime/is-prime 9))
+  (println "Age group for 45 years is " (age-group/age-group 45))
 
   ;; The given below number is big prime number. It takes long time to check if it is prime. I waited 20 min and now giving up
   ;;(println "is 20988936657440586486151264256610222593863921 prime number: " (prime/is-prime 20988936657440586486151264256610222593863921))

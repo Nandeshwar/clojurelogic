@@ -6,6 +6,7 @@
   (:require [clojurelogic.fibonacci :as fibonacci])
   (:require [clojurelogic.prime-number :as prime])
   (:require [clojurelogic.age-group :as age-group])
+  (:require [clojurelogic.smallest :as smallest])
   (:gen-class))
 
 (defn -main
@@ -42,6 +43,8 @@
 
   ;; The given below number is big prime number. It takes long time to check if it is prime. I waited 20 min and now giving up
   ;;(println "is 20988936657440586486151264256610222593863921 prime number: " (prime/is-prime 20988936657440586486151264256610222593863921))
+
+  (println "Smallest numbers among 5 4 7 2 3 = " (smallest/find-smallest[5 4 7 2 3]))
 
 
   )

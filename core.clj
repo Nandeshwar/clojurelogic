@@ -8,6 +8,7 @@
   (:require [clojurelogic.age-group :as age-group])
   (:require [clojurelogic.smallest :as smallest])
   (:require [clojurelogic.sorting :as sorting])
+  (:require [clojurelogic.factorial :as factorial])
   (:gen-class))
 
 (defn -main
@@ -47,6 +48,15 @@
 
   (println "Smallest numbers among 5 4 7 2 3 = " (smallest/find-smallest[5 4 7 2 3]))
   (println "Sorting numbers 5 4 7 2 2 3 = " (sorting/sortFun [5 4 7 2 2 3]))
+  (println "Factorial of 5 = " (factorial/fact 5))
+
+  ; Another program for factorial for big numbers which get rid of integer overflow
+  ; use the *' operator which supports arbitrary precision by automatically promoting the result to BigInt in case it would overflow:
+
+  (println "Factorial of 99"(reduce *' (range 1 100)))
+
+  ; Put N at the end of the number which makes it a bigint,
+  ;(reduce * (range 1N 1001N))
 
 
   )

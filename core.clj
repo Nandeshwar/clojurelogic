@@ -9,6 +9,7 @@
   (:require [clojurelogic.smallest :as smallest])
   (:require [clojurelogic.sorting :as sorting])
   (:require [clojurelogic.factorial :as factorial])
+  (:require [clojurelogic.matrix-add :as matrix])
   (:gen-class))
 
 (defn -main
@@ -57,6 +58,8 @@
 
   ; Put N at the end of the number which makes it a bigint,
   ;(reduce * (range 1N 1001N))
+
+  (matrix/matrix-add-main)
 
 
   )

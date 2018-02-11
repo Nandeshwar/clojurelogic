@@ -13,4 +13,4 @@
         num2 [
                [5, 6]
                [7, 8]]]
-    (println (matrix-add num1 num2))))
+    (println "Matrix addition result: "(matrix-add num1 num2))))

@@ -10,6 +10,7 @@
   (:require [clojurelogic.sorting :as sorting])
   (:require [clojurelogic.factorial :as factorial])
   (:require [clojurelogic.matrix-add :as matrix])
+  (:require [clojurelogic.matrix-transpose :as matrix-transpose])
   (:gen-class))
 
 (defn -main
@@ -60,6 +61,7 @@
   ;(reduce * (range 1N 1001N))
 
   (matrix/matrix-add-main)
+  (matrix-transpose/matrix-transpose-main)
 
 
   )

@@ -11,6 +11,7 @@
   (:require [clojurelogic.factorial :as factorial])
   (:require [clojurelogic.matrix-add :as matrix])
   (:require [clojurelogic.matrix-transpose :as matrix-transpose])
+  (:require [clojurelogic.binary-search :as binary-search])
   (:gen-class))
 
 (defn -main
@@ -62,6 +63,6 @@
 
   (matrix/matrix-add-main)
   (matrix-transpose/matrix-transpose-main)
-
+  (println "Binary Search: "(binary-search/binary-search [1 2 3 4 5] 5))
 
   )

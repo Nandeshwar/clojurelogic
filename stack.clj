@@ -27,16 +27,21 @@
   (println my-list))
 
 (defn- push [num]
-  (if (= (count my-list) list-size)
+  (if (= (count my-list)
+         list-size)
     (println "Stack is full")
     (do
-      (def my-list (conj my-list num))
+      (def my-list (conj my-list
+                         num))
       (def counter (inc counter)))))
 
 (defn- pop []
   (if (zero? counter)
     (println "Stack is empty")
-    (let [ind-last-item (.indexOf my-list (last my-list))]
-      (def my-list (subvec my-list 0 ind-last-item))
+    (let [ind-last-item (.indexOf my-list
+                                  (last my-list))]
+      (def my-list (subvec my-list
+                           0
+                           ind-last-item))
       (def counter (dec counter)))))
 

@@ -13,6 +13,7 @@
   (:require [clojurelogic.matrix-transpose :as matrix-transpose])
   (:require [clojurelogic.binary-search :as binary-search])
   (:require [clojurelogic.stack :as stack])
+  (:require [clojurelogic.queue :as queue])
   (:gen-class))
 
 (defn -main
@@ -66,5 +67,6 @@
   (matrix-transpose/matrix-transpose-main)
   (println "Binary Search: "(binary-search/binary-search [1 2 3 4 5] 5))
   (stack/stack-example)
+  (queue/queue-example)
 
   )

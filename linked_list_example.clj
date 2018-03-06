@@ -3,17 +3,18 @@
 (declare add)
 (declare display)
 
-(definterface INode
-  (getId [])
-  (getNext [])
-  (setId [x])
-  (setNext [x]))
+(defprotocol INode
+  (getId [this])
+  (getNext [this])
+  (setNext [this y]))
 
 (deftype Node [id ^:volatile-mutable next]
   INode
   (getId [this] id)
   (getNext [this] next)
-  (setNext [this x] (set! next x) this))
+  (setNext [this y] (set! next y) y))
+
+
 
 (def start nil)
 (def current nil)

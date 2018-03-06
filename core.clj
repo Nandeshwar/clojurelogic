@@ -14,6 +14,7 @@
   (:require [clojurelogic.binary-search :as binary-search])
   (:require [clojurelogic.stack :as stack])
   (:require [clojurelogic.queue :as queue])
+  (:require [clojurelogic.linked-list-example :as ll])
   (:gen-class))
 
 (defn -main
@@ -68,5 +69,6 @@
   (println "Binary Search: "(binary-search/binary-search [1 2 3 4 5] 5))
   (stack/stack-example)
   (queue/queue-example)
+  (ll/linked-list)
 
   )

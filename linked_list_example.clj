@@ -3,19 +3,16 @@
 (declare add)
 (declare display)
 
-;(deftype Node [id ^:volatile-mutable next])
-
 (definterface INode
   (getId [])
   (getNext [])
   (setId [x])
   (setNext [x]))
 
-(deftype Node [^:volatile-mutable id ^:volatile-mutable next]
+(deftype Node [id ^:volatile-mutable next]
   INode
   (getId [this] id)
   (getNext [this] next)
-  (setId [this x] (set! id x) this)
   (setNext [this x] (set! next x) this))
 
 (def start nil)
@@ -31,11 +28,9 @@
 
   (display))
 
-
 (defn- add [item]
   (if (true? is-first-item)
     (do
-
       (def start (Node. item nil ))
       (def current start)
       (def begin start)
@@ -45,7 +40,7 @@
       (def current (.getNext current)))))
 
 (defn- display []
-  (if (= (.getNext begin) nil)
+  (if (nil? (.getNext begin))
     (do
       (println (.getId begin))
       nil)

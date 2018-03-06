@@ -16,7 +16,6 @@
   (setNext [this x] (set! next x) this))
 
 (def start nil)
-(def begin nil)
 (def current nil)
 (def is-first-item true)
 
@@ -26,25 +25,23 @@
   (add 20)
   (add 30)
 
-  (display))
+  (display start))
 
 (defn- add [item]
   (if (true? is-first-item)
     (do
       (def start (Node. item nil ))
       (def current start)
-      (def begin start)
       (def is-first-item false))
     (do
       (.setNext current (Node. item nil ))
       (def current (.getNext current)))))
 
-(defn- display []
+(defn- display [begin]
   (if (nil? (.getNext begin))
     (do
       (println (.getId begin))
       nil)
     (do
       (println (.getId begin))
-      (def begin (.getNext begin))
-      (recur))))
+      (recur (.getNext begin)))))

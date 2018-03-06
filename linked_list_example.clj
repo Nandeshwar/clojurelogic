@@ -12,7 +12,7 @@
   INode
   (getId [this] id)
   (getNext [this] next)
-  (setNext [this y] (set! next y) y))
+  (setNext [this nw-node] (set! next nw-node) next))
 
 
 

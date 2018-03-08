@@ -37,7 +37,7 @@
   (add 20)
   (add 30)
 
-  (insert-item 20 200)
+  (insert-item 30 200)
   (display start)
   (println "------------Display again------")
   ; display1 is method
@@ -69,8 +69,11 @@
   (loop [current start]
     (if (nil? (.getNext current))
       (do
-        (println (.getId current))
-        false)
+        (if (= (.getId current) after)
+          (do
+            (.setNext current (Node. item nil))
+            true)
+          false))
       (do
         (if (= (.getId current) after)
           (do

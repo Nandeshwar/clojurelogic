@@ -3,6 +3,7 @@
 (declare add)
 (declare display)
 (declare insert-item)
+(declare delete-item)
 
 (defprotocol INode
   (getId [this])
@@ -16,8 +17,9 @@
   (getNext [this] next)
   (setNext [this nw-node] (set! next nw-node) next)
 
-  ; This method is equivalent to display method given below
-  ; I was just testing to have this interface
+
+  ;This method is equivalent to display method given below.
+  ;I was just testing to have this interface
   (display1 [this node]
             (if (nil? (.getNext node))
               (do
@@ -31,13 +33,17 @@
 (def current nil)
 (def is-first-item true)
 
+(def not-nil? (complement nil?))
+
 (defn linked-list []
+
   (println "Linked list demonstration")
   (add 10)
   (add 20)
   (add 30)
 
   (insert-item 30 200)
+  (delete-item 20)
   (display start)
   (println "------------Display again------")
   ; display1 is method
@@ -83,4 +89,23 @@
             (.setNext new-node tmp)
             true)
           (recur (.getNext current)))))))
+
+(defn- delete-item [item]
+  (loop [current start counter 1]
+    ; handle first item
+    (when (and (= counter 1)
+               (= (getId current) item))
+      (def start (.getNext start)))
+      (do
+        ; hanle last item
+        (if (and (not-nil? (.getNext current))
+                 (= (getId (.getNext current)) item)
+                 (nil? (getNext (.getNext current))))
+          (.setNext current nil)
+
+          ; Handle middle item
+          (do
+            (println "next item: " (.getNext current))
+            (if (not-nil? (.getNext current))
+            (recur (.getNext current) (inc counter))))))))
 
